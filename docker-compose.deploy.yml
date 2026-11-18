@@ -30,7 +30,7 @@ services:
       retries: 5
 
   backend:
-    image: ${DOCKERHUB_USERNAME}/backend:latest
+    image: ${DOCKERHUB_USERNAME}/recipe-app-backend:latest
     environment:
       NODE_ENV: production
       PORT: 3000
@@ -59,7 +59,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    image: ${DOCKERHUB_USERNAME}/frontend:latest
+    image: ${DOCKERHUB_USERNAME}/recipe-app-frontend:latest
     ports:
       - "8080:80"
     depends_on:
